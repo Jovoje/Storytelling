@@ -6,8 +6,6 @@ import { GUI } from 'dat.gui'
 import Stats from 'three/addons/libs/stats.module.js';
 import { gsap } from "gsap";
 
-//Opsætning af GUI
-//const gui = new GUI();
 
 //Scene setup
 const scene = new THREE.Scene();
@@ -89,7 +87,7 @@ loader.load('/examples/textures/desert.obj',function ( object ) {
 });
 
   scene.add( terrain );
-  },);
+},);
 
 //Træer
   var tree;
@@ -210,17 +208,17 @@ loader.load('/examples/textures/desert.obj',function ( object ) {
   });
 
 
-  // var crates;
-  // const bloader = new GLTFLoader().setPath('/examples/models/');
-  // bloader.load('military_crates.glb', function (gltf) {
+  var crates;
+  const bloader = new GLTFLoader().setPath('/examples/models/');
+  bloader.load('military_crates.glb', function (gltf) {
   
-  //     crates = gltf.scene;
-  //     crates.scale.set(2, 2, 2);
-  //     crates.position.set(-20.5, -2, 20.6); //Random
-  //     crates.rotation.set(0, 0.7, 0);
+      crates = gltf.scene;
+      crates.scale.set(2, 2, 2);
+      crates.position.set(-20.5, -2, 15.6); 
+      crates.rotation.set(0, 0.7, 0);
 
-  //   scene.add(crates)
-  // })
+    scene.add(crates)
+  })
 
 
   var tent;
@@ -235,21 +233,14 @@ loader.load('/examples/textures/desert.obj',function ( object ) {
       scene.add(tent);
   });
 
-   // Create the plane geometry for the floor
+   //Tent floor
    const planeGeometry = new THREE.PlaneGeometry(100, 100); // A large plane, adjust size as needed
    const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff }); // Gray color for the floor
-   
-   // Create the plane mesh using geometry and material
+  
    const floor = new THREE.Mesh(planeGeometry, planeMaterial);
-   
-   // Rotate the plane to be flat on the ground (by default it is vertical)
-   floor.rotation.x = - Math.PI / 2; // Rotate by 90 degrees (to lie flat)
-   
-   // Position the plane just below the tent
-   floor.position.set(-38.5, -4.3, 50); // Adjust the Y position so it is below the tent
-   
-   // Allow the plane to receive shadows
-   floor.receiveShadow = true;
+    floor.rotation.x = - Math.PI / 2; 
+      floor.position.set(-38.5, -4.3, 50);
+      floor.receiveShadow = true;
 
    scene.add(floor);
 
@@ -481,7 +472,6 @@ function createStars() {
 }
 
 var _stars = new createStars();
-
 
 //Animation loop
 animate();
