@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Reenie+Beanie&display=swap" rel="stylesheet">
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+		body { margin: 0; }
+		#note {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: rgb(214, 206, 206);
+			padding: 40px;
+			font-family: "Reenie Beanie", cursive;
+			font-weight: 500;
+  			font-style:oblique;
+			font-size: 30px;
+			box-shadow: 0 10px rgba(0, 0, 0, 0.1);
+
+    	}
+
+		#but {
+			background-color: rgba(51, 51, 51, 0.05);
+			border-radius: 4px;
+			border-width: 0;
+			color: #333333;
+			cursor: pointer;
+			display: inline-block;
+			font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 20px;
+			list-style: none;
+			margin: 0;
+			text-align: center;
+			transition: all 200ms;
+			vertical-align: baseline;
+			white-space: nowrap;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			position: absolute; 
+    		right: 0;           
+    		top: 0;         
+    		margin: 10px; 
+			padding: 5px;
+			padding-right: 10px;
+			padding-left: 10px;
+		}		
+	
+			
+		</style>
+	</head>
+	<body>
+		<div id="note1Text" style="display: none;">
+			<p>I’ve finally arrived… 
+
+				There’s surely something here.
+				
+				Tomorrow, we begin our search for the source.</p>
+			<button id="but" onclick="closeNote()">X</button>
+
+		</div>
+		<div id="note2Text" style="display: none;">
+			<p>Something isn’t right...
+				I’m starting to think this place doesn’t want us here.
+
+			</p>
+			<button id="but" onclick="closeNote()">X</button>
+		</div>
+		<div id="note3Text" style="display: none;">
+			<p>The data isn’t worth the risk. Something is off here—too quiet, too still. If you find this, you should leave too.</p>
+			<button id="but" onclick="closeNote()">X</button>
+		</div>
+
+		<div id="crosshair" style="position: absolute; top: 50%; left: 50%; width: 3px; height: 3px; background: rgb(219, 213, 34); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999;">
+		</div>
+			<div id="note">
+
+			<button id="but" onclick="closeNote()">X</button>
+			  </div>
+			  <div id="pressE" style=" position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); background: none; color: white; padding: 10px; border-radius: 5px; font-family: Arial, sans-serif;">
+				Press E to interact
+			  </div>
+		<script type="module" src="/6/main.js">
+			
+		</script>
+	</body>
+</html>
